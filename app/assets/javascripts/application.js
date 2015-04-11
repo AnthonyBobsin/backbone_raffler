@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery/dist/jquery.js
+//= require jquery-ujs/src/rails.js
 //= require turbolinks
+//= require jquery.turbolinks
+//= require bootstrap-sass-official/assets/javascripts/bootstrap.js
 //= require underscore
 //= require backbone
 //= require raffler
