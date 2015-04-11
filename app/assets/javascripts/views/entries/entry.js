@@ -2,6 +2,10 @@ Raffler.Views.Entry = Backbone.View.extend({
 
     template: JST['entries/entry'],
 
+    events: {
+        'click .delete_entry': 'deleteEntry'
+    },
+
     tagName: 'li',
 
     initialize: function() {
@@ -17,6 +21,12 @@ Raffler.Views.Entry = Backbone.View.extend({
     render: function() {
         $(this.el).html(this.template({entry: this.model}));
         return this;
+    },
+
+    deleteEntry: function() {
+        this.model.stopListening();
+        this.model.destroy();
+        this.remove();
     }
 
 });
