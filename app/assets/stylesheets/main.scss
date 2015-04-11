@@ -22,6 +22,11 @@ $silver: #bdc3c7;
     100% { width: 100%; }
 }
 
+@keyframes letsRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(359deg); }
+}
+
 html {
     height: 100%;
 }
@@ -42,10 +47,18 @@ body {
     border-radius: 30px;
     box-shadow: 0px 2px 4px 2px $midnightBlue;   
     h1 {
-        text-align: center;
         text-shadow: 0px 1px 1px black;
         letter-spacing: 1.1px;
         margin-bottom: 20px;
+        width: 100%;
+        float: left;
+        #reset_winners {
+            float: right;
+            cursor: pointer;
+            &:hover {
+                animation: letsRotate 1s infinite linear;
+            }
+        }
     }
     #new_entry {
         margin-bottom: 20px;
@@ -82,12 +95,12 @@ body {
     box-shadow: 0 3px 0px $midnightBlue; 
 
     &:hover {
-        animation: buttonWiggle 1s infinite;
+        animation: buttonWiggle 1s infinite linear;
     }
 }
 
 .btn#draw {
     &:hover {
-        animation: largeButton 1s infinite;
+        animation: largeButton 1s infinite linear;
     }
 }

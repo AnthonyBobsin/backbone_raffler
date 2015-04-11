@@ -3,8 +3,11 @@ Raffler.Views.EntriesIndex = Backbone.View.extend({
     template: JST['entries/index'],
 
     events: {
+        // When user clicks submit entry, call createEntry function
         'submit #new_entry': 'createEntry',
-        'click #draw': 'drawWinner'
+        // When user clicks #draw call drawWinner function
+        'click #draw': 'drawWinner',
+        'click #reset_winners': 'resetWinners'
     },
 
     initialize: function () {
@@ -51,5 +54,11 @@ Raffler.Views.EntriesIndex = Backbone.View.extend({
                 }
             }
         }
+    },
+
+    resetWinners: function() {
+        this.collection.each(function(item) {
+            item.save({winner: false});
+        });
     }
 });
